@@ -7,7 +7,7 @@
         size = 14;
       };
       settings = {
-        remember_window_size = true;
+        remember_window_size = false;
         cursor_trail = 1;
         background_opacity = 0.80;
         confirm_os_window_close = 0;
