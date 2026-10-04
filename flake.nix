@@ -82,8 +82,8 @@
             };
             modules = [
               ./modules/common/nixos-core/core.nix
-              ./modules/features/workstation/workstation.nix
-              ./modules/features/virtualisation/virtualisation.nix
+              ./modules/features/hyprland-de/hyprland-de.nix
+              #./modules/features/virtualisation/virtualisation.nix
               ./modules/hosts/${currentHost.hostName}/default.nix
               home-manager.nixosModules.home-manager
               ./modules/features/home-manager/decl.nix
