@@ -5,7 +5,6 @@
     extras = {
       coding.neogen.enable = true;
       test.core.enable = true;
-      util.gh.enable = true;
       dap = {
         core.enable = true;
         nlua.enable = true;
