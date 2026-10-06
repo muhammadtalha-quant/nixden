@@ -22,15 +22,6 @@
         type = lib.types.nullOr lib.types.str;
         default = null;
       };
-      theme = lib.mkOption {
-        type = lib.types.nullOr (
-          lib.types.enum [
-            "dark"
-            "light"
-          ]
-        );
-        default = null;
-      };
     };
   };
 }
