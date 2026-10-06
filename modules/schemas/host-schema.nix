@@ -2,11 +2,11 @@
   den.schema.host = { lib, host, ... }: {
     options = {
       stateVersion = lib.mkOption {
-        type = lib.typs.str;
+        type = lib.types.str;
         default = "";
       };
       timeZone = lib.mkOption {
-        type = lib.typs.str;
+        type = lib.types.str;
         default = "";
       };
       disko = lib.mkOption {
