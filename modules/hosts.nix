@@ -1,6 +1,12 @@
 {
   den.hosts = {
     x86_64-linux.hp-probook-430g2 = {
+      stateVersion = "26.05";
+      timeZone = "Asia/Karachi";
+      disko = {
+        device = "/dev/sda";
+        swapSize = "4G";
+      };
       users = {
         muhammadtalha = {
           realName = "Muhammad Talha";
