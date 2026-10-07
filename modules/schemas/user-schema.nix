@@ -5,6 +5,13 @@
         type = lib.types.str;
         default = "";
       };
+      catppuccin = lib.mkOption {
+        type = lib.types.enum [
+          "macchiato"
+          "latte"
+        ];
+        default = "macchiato";
+      };
       hashedPasswordRoot = lib.mkOption {
         type = lib.types.str;
         default = "$y$j9T$JMDotg00nZgcO/UsBUVjH1$8yU7JWkNluPN6Svjoi8WBwQ24JZOxwT3XZDQzUI52j8";
