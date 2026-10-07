@@ -3,6 +3,7 @@
     includes = [
       den.batteries.primary-user
       (den.batteries.user-shell "fish")
+      den.aspects.hyde
     ];
     user.hashedPassword = user.hashedPassword;
 
