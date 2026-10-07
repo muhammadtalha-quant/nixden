@@ -1,0 +1,4 @@
+{
+  den.aspects.hyde = {
+  };
+}
