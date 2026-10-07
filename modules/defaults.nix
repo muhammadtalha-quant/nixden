@@ -6,6 +6,7 @@
       includes = [
         den.batteries.hostname
         den.batteries.define-user
+        den.aspects.nixos-core
       ];
 
       # Forward host.stateVersion to homeManager and nixosSystem.
