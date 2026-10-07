@@ -1,0 +1,5 @@
+{
+  den.aspects.nixos-core = {
+
+  };
+}
