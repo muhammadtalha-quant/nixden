@@ -1,5 +1,5 @@
-{
-  den.aspects.nixos-core = {
+{ lib, ... }: {
+  den.aspects.nixos-core = { host, ... }: {
     nixos = { pkgs, ... }: {
       boot = {
         loader = {
@@ -7,7 +7,7 @@
           efi.canTouchEfiVariables = true;
         };
         kernelPackages = pkgs.linuxPackages_latest;
-        tmp.cleanOnBoot = true;
+        tmp.cleanOnBoot = lib.mkDefault true;
       };
       i18n = {
         defaultLocale = "en_US.UTF-8";
@@ -75,6 +75,7 @@
           microfetch
         ];
       };
+      time.timeZone = host.timeZone;
     };
   };
 }
