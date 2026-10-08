@@ -6,7 +6,6 @@
       includes = [
         den.batteries.hostname
         den.batteries.define-user
-        den.aspects.nixos-core
       ];
 
       # Forward host.stateVersion to homeManager and nixosSystem.
@@ -20,5 +19,6 @@
 
     # enable home manager for all users by default.
     schema.user.classes = lib.mkDefault [ "homeManager" ];
+    schema.host.includes = [ den.aspects.nixos-core ];
   };
 }
