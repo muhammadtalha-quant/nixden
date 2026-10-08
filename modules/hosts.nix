@@ -14,7 +14,6 @@
           emailAddress = "muhammadtalha.quant@gmail.com";
           publicGPGKey = "33DF23031DE1A83C";
           hashedPasswordRoot = "$y$j9T$xdVjDtNvbPif5wMUzEvsj1$CK0ZZBEZPzJzKikSVwXi6dzzX.N39WG67nO7gOJoQE1";
-          catppuccin = "macchiato";
         };
       };
     };
