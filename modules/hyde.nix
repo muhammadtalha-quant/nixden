@@ -1,6 +1,9 @@
 { inputs, ... }: {
   den.aspects.hyde = { user, ... }: {
     nixos = { pkgs, ... }: {
+      imports = [
+        inputs.home-manager.nixosModules.home-manager
+      ];
       fonts.packages = with pkgs; [
         newcomputermodern
         inter
@@ -22,6 +25,11 @@
         ];
       };
       nixpkgs.config.allowUnfree = true;
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        backupFileExtension = "backup";
+      };
       networking = {
         firewall = {
           allowedTCPPorts = [ 53317 ];

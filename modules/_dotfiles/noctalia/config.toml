@@ -729,10 +729,10 @@ source = "community"
 wallpaper_scheme = "faithful"
 
     [theme.templates]
-    builtin_ids = [ "btop", "cava" ]
-    community_ids = []
+    builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "qt", "starship" ]
+    community_ids = [ "obsidian", "bat", "fzf", "lazygit" ]
     enable_builtin_templates = true
-    enable_community_templates = false
+    enable_community_templates = true
 
 [wallpaper]
 directory = "/home/muhammadtalha/Pictures/Wallpapers"
@@ -754,13 +754,13 @@ transition_on_startup = true
     recursive = true
 
     [wallpaper.default]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/van-chilling.png"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/whale.jpg"
 
     [wallpaper.last]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/van-chilling.png"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/whale.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/van-chilling.png"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/whale.jpg"
 
 [weather]
 effects = true
