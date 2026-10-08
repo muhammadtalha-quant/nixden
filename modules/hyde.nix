@@ -263,7 +263,7 @@
           settings = {
             remember_window_size = false;
             cursor_trail = 1;
-            background_opacity = 0.80;
+            background_opacity = 0.93;
             confirm_os_window_close = 0;
             enable_audio_bell = false;
             scrollback = "never";
@@ -272,6 +272,9 @@
             scrollback_lines = 100000;
             enabled_layouts = "splits,stack";
           };
+          extraConfig = ''
+            include themes/noctalia.conf
+          '';
           shellIntegration.enableFishIntegration = true;
           enableGitIntegration = true;
           keybindings = {
