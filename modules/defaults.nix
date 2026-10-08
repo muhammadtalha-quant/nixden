@@ -10,11 +10,11 @@
       ];
 
       # Forward host.stateVersion to homeManager and nixosSystem.
-      nixos.system = { host, ... }: {
-        inherit (host) stateVersion;
+      nixos = { host, ... }: {
+        system.stateVersion = host.stateVersion;
       };
-      homeManager.home = { host, ... }: {
-        inherit (host) stateVersion;
+      homeManager = { host, ... }: {
+        home.stateVersion = host.stateVersion;
       };
     };
 
