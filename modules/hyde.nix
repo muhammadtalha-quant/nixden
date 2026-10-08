@@ -455,10 +455,10 @@
         enable = true;
         antialiasing = true;
         defaultFonts = {
-          monospace = "Noto Sans";
-          sansSerif = "Inter Variable";
-          serif = "JetBrainsMono Nerd Font Mono";
-          emoji = "Noto Color Emoji";
+          monospace = [ "Noto Sans" ];
+          sansSerif = [ "Inter Variable" ];
+          serif = [ "JetBrainsMono Nerd Font Mono" ];
+          emoji = [ "Noto Color Emoji" ];
         };
       };
     };
