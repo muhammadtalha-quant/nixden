@@ -21,6 +21,7 @@
           unar
         ];
       };
+      nixpkgs.config.allowUnfree = true;
       networking = {
         firewall = {
           allowedTCPPorts = [ 53317 ];
