@@ -7,7 +7,7 @@
       disko.devices = {
         disk = {
           my-disk = {
-            inherit (host.disko) device;
+            device = host.disko.device;
             type = "disk";
             content = {
               type = "gpt";
