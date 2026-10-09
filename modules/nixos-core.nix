@@ -51,14 +51,26 @@
         enableAllHardware = true;
       };
       programs = {
+
         gnupg = {
           agent.enable = true;
           agent.enableSSHSupport = true;
+        };
+
+        nh = {
+          enable = true;
+          flake = host.flakePath;
+          clean = {
+            enable = true;
+            dates = "Mon *-*-* 09:00:00";
+            extraArgs = "--keep 3 --keep-since 5d";
+          };
         };
       };
       environment = {
         sessionVariables = {
           LANG = "en_US.UTF-8";
+          FLAKE_PATH = host.flakePath;
         };
         systemPackages = with pkgs; [
           nix-output-monitor

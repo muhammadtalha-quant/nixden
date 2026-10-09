@@ -391,6 +391,13 @@
             cat = "bat";
             matrix = "cmatrix -rsbu5";
             pipes = "pipes.sh -p4 -r4000 -R";
+            nixos-switch = "nh os switch";
+            nixos-boot = "nh os boot";
+            nixos-purge-all = "nh clean all --optimise; sudo rm -frv /nix/var/nix/profiles/{system-*,per-user/*}; sudo mkdir -p /nix/var/nix/profiles/per-user/{root/channels,${user.userName}}; nh os boot";
+            nixos-test = "nh os test";
+            nixos-info = "nh os info";
+            nixos-rollback = "nh os rollback --to";
+            nixos-update = "nix flake update --flake $FLAKE_PATH";
           };
           shellInit = ''
             set -U fish_greeting 
