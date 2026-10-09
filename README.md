@@ -1,10 +1,10 @@
-# Nucleonix
+# Nixden
 
-A lightweight and multi-host native NixOS configuration based on [Nucleus Architecture](https://github.com/muhammadtalha-quant/nucleus).
+A lightweight, aspect-oriented, multi-host Nix configuration built on [Den](https://den.denful.dev).
 
-## The Look and Feel of Nucleonix
+## The Look and Feel of Nixden
 
-Nucleonix comes with the iconic Catppuccin color palette.
+Nixden comes with the iconic Catppuccin color palette.
 
 - For light mode, it uses Catppuccin Latte with ![Static Badge](https://img.shields.io/badge/-m?logoColor=%238839ef&labelColor=%238839ef&color=%238839ef) as primary accent.
 - For dark mode, it uses Catppuccin Macchiato with ![Static Badge](https://img.shields.io/badge/-m?logoColor=%23c6a0f6&labelColor=%23c6a0f6&color=%23c6a0f6) as primary accent.
