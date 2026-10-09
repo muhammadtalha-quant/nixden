@@ -22,6 +22,7 @@
           gpu-screen-recorder
           rar
           unar
+          adw-gtk3
         ];
       };
       nixpkgs.config.allowUnfree = true;
