@@ -8,7 +8,7 @@
     user.hashedPassword = user.hashedPassword;
 
     # enable syncthing for user muhammadtalha
-    provides.to-host.nixos.services.syncthing = {
+    provides.to-hosts.nixos.services.syncthing = {
       enable = true;
       dataDir = user.home;
       user = user.name;
