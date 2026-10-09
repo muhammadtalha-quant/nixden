@@ -3,7 +3,7 @@
     x86_64-linux.hp-probook-430g2 = {
       stateVersion = "26.05";
       timeZone = "Asia/Karachi";
-      flakePath = "/home/muhammadtalha/nucleonix";
+      flakePath = "/home/muhammadtalha/denix";
       disko = {
         device = "/dev/sda";
         swapSize = "4G";
