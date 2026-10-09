@@ -9,6 +9,10 @@
         type = lib.types.str;
         default = "";
       };
+      flakePath = lib.mkOption {
+        type = lib.types.str;
+        default = "/etc/nixos";
+      };
       disko = lib.mkOption {
         type = lib.types.submodule {
           options = {
