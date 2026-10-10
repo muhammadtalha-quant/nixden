@@ -1,6 +1,5 @@
 local KEYS = require("lib.keys")
 local M = {}
-local workspace_layout_rules = {}
 local active_animation_profile
 
 local DWINDLE_ANIMATIONS = {
@@ -15,14 +14,14 @@ local DWINDLE_ANIMATIONS = {
 }
 
 local SCROLLING_ANIMATIONS = {
-  windowsIn = { speed = 3, bezier = "expressiveDefaultSpatial", style = "slide" },
-  windowsOut = { speed = 2.5, bezier = "emphasizedAccel", style = "slide" },
-  windowsMove = { speed = 3, bezier = "expressiveDefaultSpatial", style = "slide" },
-  layersIn = { speed = 2.7, bezier = "emphasizedDecel", style = "slide" },
-  layersOut = { speed = 2.4, bezier = "emphasizedAccel", style = "slide" },
-  workspaces = { speed = 7, bezier = "menu_decel", style = "slidevert" },
-  specialWorkspaceIn = { speed = 2.8, bezier = "emphasizedDecel", style = "slidevert" },
-  specialWorkspaceOut = { speed = 2.8, bezier = "emphasizedAccel", style = "slidevert" }
+  windowsIn = { speed = 5, bezier = "expressiveDefaultSpatial", style = "slide" },
+  windowsOut = { speed = 4, bezier = "emphasizedAccel", style = "slide" },
+  windowsMove = { speed = 5.5, bezier = "expressiveDefaultSpatial", style = "slide" },
+  layersIn = { speed = 4, bezier = "emphasizedDecel", style = "slide" },
+  layersOut = { speed = 3.5, bezier = "emphasizedAccel", style = "slide" },
+  workspaces = { speed = 6.5, bezier = "menu_decel", style = "slidevert" },
+  specialWorkspaceIn = { speed = 4.5, bezier = "emphasizedDecel", style = "slidefadevert -100%" },
+  specialWorkspaceOut = { speed = 3.5, bezier = "emphasizedAccel", style = "slidefadevert -100%" }
 }
 
 local function apply_animation(leaf, spec)
@@ -48,84 +47,27 @@ function M.active_workspace()
 end
 
 function M.active_layout()
-  local workspace = hl.get_active_workspace()
-  return workspace and workspace.tiled_layout or nil
+  return hl.get_config("general:layout")
 end
 
 function M.is_scrolling_active()
   return M.active_layout() == "scrolling"
 end
 
-function M.apply_animation_profile(global_layout_override, workspace_layout_override)
-  local global_layout = global_layout_override or hl.get_config("general:layout")
-  local workspace = hl.get_active_workspace()
-  local global_scrolling = global_layout == "scrolling"
-  local workspace_layout = workspace_layout_override or (workspace and workspace.tiled_layout)
-  local workspace_scrolling = workspace_layout == "scrolling"
-  local profile = (global_scrolling and "global-scrolling" or "global-dwindle")
-    .. (workspace_scrolling and "-workspace-scrolling" or "-workspace-dwindle")
+function M.apply_animation_profile(layout_override)
+  local layout = layout_override or hl.get_config("general:layout")
+  local is_scrolling = layout == "scrolling"
+  local profile = is_scrolling and "scrolling" or "dwindle"
 
   if profile == active_animation_profile then
     return
   end
 
-  local window_profile = workspace_scrolling and SCROLLING_ANIMATIONS or DWINDLE_ANIMATIONS
-  local workspace_profile = global_scrolling and SCROLLING_ANIMATIONS or DWINDLE_ANIMATIONS
-  for leaf, spec in pairs(window_profile) do
-    if leaf ~= "workspaces" and leaf ~= "specialWorkspaceIn" and leaf ~= "specialWorkspaceOut" then
-      apply_animation(leaf, spec)
-    end
+  local anim_profile = is_scrolling and SCROLLING_ANIMATIONS or DWINDLE_ANIMATIONS
+  for leaf, spec in pairs(anim_profile) do
+    apply_animation(leaf, spec)
   end
-  apply_animation("workspaces", workspace_profile.workspaces)
-  apply_animation("specialWorkspaceIn", workspace_profile.specialWorkspaceIn)
-  apply_animation("specialWorkspaceOut", workspace_profile.specialWorkspaceOut)
   active_animation_profile = profile
-end
-
-local function get_workspace_layout_rules(workspace)
-  local address = workspace.addressable_name
-  local rules = workspace_layout_rules[address]
-  if rules then
-    return rules
-  end
-
-  rules = {
-    dwindle = hl.workspace_rule({
-      workspace = address,
-      layout = "dwindle",
-      enabled = false
-    }),
-    scrolling = hl.workspace_rule({
-      workspace = address,
-      layout = "scrolling",
-      enabled = false
-    })
-  }
-  if not rules.dwindle or not rules.scrolling then
-    error("Failed to create workspace layout rules for " .. address)
-  end
-
-  workspace_layout_rules[address] = rules
-  return rules
-end
-
-function M.toggle_workspace_layout()
-  local workspace = M.active_workspace()
-  local current = workspace.tiled_layout
-  local target
-
-  if current == "dwindle" then
-    target = "scrolling"
-  elseif current == "scrolling" then
-    target = "dwindle"
-  else
-    error("Cannot toggle unsupported workspace layout: " .. tostring(current))
-  end
-
-  local rules = get_workspace_layout_rules(workspace)
-  M.apply_animation_profile(nil, target)
-  rules[target]:set_enabled(true)
-  rules[current]:set_enabled(false)
 end
 
 function M.toggle_global_layout()
@@ -140,12 +82,7 @@ function M.toggle_global_layout()
     error("Cannot toggle unsupported global layout: " .. tostring(current))
   end
 
-  for _, rules in pairs(workspace_layout_rules) do
-    rules.dwindle:set_enabled(false)
-    rules.scrolling:set_enabled(false)
-  end
-
-  M.apply_animation_profile(target, target)
+  M.apply_animation_profile(target)
   hl.config({
     general = {
       layout = target

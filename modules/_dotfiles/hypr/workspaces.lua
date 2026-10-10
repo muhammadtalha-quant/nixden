@@ -95,18 +95,3 @@ hl.bind(
     description = "Toggle Dwindle/Scrolling Globally"
   }
 )
-
-hl.bind(
-  helpers.register(
-    KEYS.MODIFIER.SUPER,
-    KEYS.MODIFIER.CTRL,
-    KEYS.MODIFIER.ALT,
-    KEYS.ALPHABET.L
-  ),
-  function()
-    helpers.toggle_workspace_layout()
-  end,
-  {
-    description = "Toggle Dwindle/Scrolling on Workspace"
-  }
-)
