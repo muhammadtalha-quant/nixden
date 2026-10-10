@@ -18,6 +18,9 @@ hl.define_submap("ai_mode", function()
       end
     )
   end
+
+  hl.bind(KEYS.SPECIAL.ESCAPE, hl.dsp.submap("reset"))
+  hl.bind(KEYS.SPECIAL.ENTER, hl.dsp.submap("reset"))
 end)
 
 hl.define_submap("socialmedia", function()
@@ -37,6 +40,9 @@ hl.define_submap("socialmedia", function()
       end
     )
   end
+
+  hl.bind(KEYS.SPECIAL.ESCAPE, hl.dsp.submap("reset"))
+  hl.bind(KEYS.SPECIAL.ENTER, hl.dsp.submap("reset"))
 end)
 
 hl.define_submap("resize", function()
@@ -47,9 +53,22 @@ hl.define_submap("resize", function()
     [KEYS.ARROW.DOWN]  = { x = 0, y = 10, relative = true },
   }
   for bind, resize_spec in pairs(keyresize_spec) do
+    local scrolling_action
+    if resize_spec.x < 0 then
+      scrolling_action = "colresize -conf"
+    elseif resize_spec.x > 0 then
+      scrolling_action = "colresize +conf"
+    end
+    local action = hl.dsp.window.resize(resize_spec)
+    if scrolling_action then
+      action = helpers.layout_action(scrolling_action, function()
+        return hl.dsp.window.resize(resize_spec)
+      end)
+    end
+
     hl.bind(
       bind,
-      hl.dsp.window.resize(resize_spec),
+      action,
       {
         repeating = true
       }

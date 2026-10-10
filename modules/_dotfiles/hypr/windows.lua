@@ -61,9 +61,9 @@ hl.bind(
     KEYS.MODIFIER.SUPER,
     KEYS.ARROW.LEFT
   ),
-  hl.dsp.focus({
-    direction = "left"
-  }),
+  helpers.layout_action("focus l", function()
+    return hl.dsp.focus({ direction = "left" })
+  end),
   {
     description = "Focus Window Left"
   }
@@ -74,9 +74,9 @@ hl.bind(
     KEYS.MODIFIER.SUPER,
     KEYS.ARROW.RIGHT
   ),
-  hl.dsp.focus({
-    direction = "right"
-  }),
+  helpers.layout_action("focus r", function()
+    return hl.dsp.focus({ direction = "right" })
+  end),
   {
     description = "Focus Window Right"
   }
@@ -166,9 +166,9 @@ hl.bind(
     KEYS.MODIFIER.SHIFT,
     KEYS.ARROW.LEFT
   ),
-  hl.dsp.window.swap({
-    direction = "left"
-  }),
+  helpers.layout_action("swapcol l", function()
+    return hl.dsp.window.swap({ direction = "left" })
+  end),
   {
     description = "Swap Focused Window with Window to Left"
   }
@@ -180,9 +180,9 @@ hl.bind(
     KEYS.MODIFIER.SHIFT,
     KEYS.ARROW.RIGHT
   ),
-  hl.dsp.window.swap({
-    direction = "right"
-  }),
+  helpers.layout_action("swapcol r", function()
+    return hl.dsp.window.swap({ direction = "right" })
+  end),
   {
     description = "Swap Focused Window with Window to Right"
   }

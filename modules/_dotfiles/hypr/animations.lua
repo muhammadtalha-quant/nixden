@@ -86,3 +86,16 @@ hl.animation({
   bezier = "emphasizedAccel",
   style = "slidevert"
 })
+
+local helpers = require("lib.helpers")
+
+helpers.apply_animation_profile()
+hl.on("workspace.active", function()
+  helpers.apply_animation_profile()
+end)
+hl.on("workspace.special_active", function()
+  helpers.apply_animation_profile()
+end)
+hl.on("config.props_refreshed", function()
+  helpers.apply_animation_profile()
+end)
