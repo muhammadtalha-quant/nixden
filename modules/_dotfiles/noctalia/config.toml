@@ -5,9 +5,8 @@ ui_scale = 1.0
 [audio]
 enable_overdrive = false
 enable_sounds = true
-notification_sound = ""
-sound_volume = 0.59999998658895493
-volume_change_sound = ""
+sound_theme = "freedesktop"
+sound_volume = 0.59999996423721313
 
 [backdrop]
 blur_intensity = 0.17999999225139618
@@ -27,7 +26,7 @@ order = [ "default" ]
     capsule_fill = "on_primary"
     capsule_foreground = "on_surface"
     capsule_group = []
-    capsule_opacity = 0.84999998100101948
+    capsule_opacity = 0.84999996423721313
     capsule_padding = 10.0
     capsule_radius = 15.0
     capsule_thickness = 0.75
@@ -37,6 +36,7 @@ order = [ "default" ]
     enabled = true
     end = [ "privacy", "network", "bluetooth", "volume", "brightness", "battery" ]
     font_family = "JetBrainsMono NFM"
+    font_scale = 1.0
     font_weight = 700
     hover_highlight = false
     layer = "top"
@@ -68,7 +68,7 @@ warning_threshold = 20
 [brightness]
 enable_ddcutil = false
 ignore_mmids = []
-minimum_brightness = 0.19999999552965164
+minimum_brightness = 0.19999998807907104
 sync_all_monitors = true
 
 [calendar]
@@ -76,6 +76,12 @@ enabled = false
 event_date_format = "%A %e %B"
 event_time_format = "%H:%M"
 refresh_minutes = 15
+
+    [calendar.reminders]
+    all_day_digest_time = "09:00"
+    default_lead_minutes = 10
+    enabled = true
+    use_event_reminders = true
 
 [control_center]
 hidden_tabs = []
@@ -104,29 +110,11 @@ width = 700
 [desktop_widgets]
 enabled = false
 schema_version = 2
-widget_order = []
 
     [desktop_widgets.grid]
     cell_size = 16
     major_interval = 4
     visible = false
-
-    [desktop_widgets.widget.desktop-widget-0000000000000001]
-    box_height = 42.301136016845703
-    box_width = 239.02052307128906
-    cx = 658.0216064453125
-    cy = 58.291275024414062
-    output = "eDP-1"
-    placement_height = 768.0
-    placement_width = 1366.0
-    rotation = -3.141425609588623
-    type = "audio_visualizer"
-
-        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
-        background = false
-        bands = 20
-        centered = false
-        show_when_idle = false
 
 [dock]
 active_monitor_only = false
@@ -182,7 +170,7 @@ rebooting = []
 session_locked = []
 session_unlocked = []
 shutting_down = []
-started = "hyprctl reload"
+started = [ "hyprctl reload" ]
 theme_mode_changed = []
 wallpaper_changed = []
 wifi_disabled = []
@@ -261,11 +249,14 @@ sunset = ""
 allow_empty_password = true
 blur_intensity = 0.84999996423721313
 blurred_desktop = false
+edge_smoothness = 0.30000001192092896
 enabled = true
 fingerprint = true
 lock_before_suspend = true
 monitors = []
 tint_intensity = 0.64999997615814209
+transition = [ "fade", "wipe", "disc", "stripes", "zoom", "honeycomb" ]
+transition_duration = 1500.0
 wallpaper = ""
 
 [lockscreen_widgets]
@@ -346,6 +337,7 @@ widget_order = [
     box_width = 720.0
     cx = 674.0
     cy = 528.0
+    enabled = true
     output = "winit"
     placement_height = 710.0
     placement_width = 1348.0
@@ -436,6 +428,7 @@ border = true
 collapse_on_dismiss = true
 enable_daemon = true
 history_retention_hours = 0
+keep_dismissed_in_history = true
 layer = "top"
 max_visible = 0
 monitors = []
@@ -483,6 +476,7 @@ auto_update = "official"
 enabled = [ "noctalia/screen_recorder", "noctalia/kaomoji", "noctalia/notes" ]
 
     [[plugins.source]]
+    enabled = true
     kind = "git"
     location = "https://github.com/noctalia-dev/official-plugins"
     name = "official"
@@ -496,6 +490,7 @@ enabled = [ "noctalia/screen_recorder", "noctalia/kaomoji", "noctalia/notes" ]
 [shell]
 app_icon_color = "secondary"
 app_icon_colorize = false
+avatar_path = ""
 button_borders = true
 card_borders = true
 clipboard_auto_paste = "off"
@@ -520,6 +515,7 @@ polkit_agent = true
 popup_borders = true
 popup_shadows = true
 screen_time_enabled = false
+settings_expand_all_groups = false
 settings_show_advanced = false
 settings_window_translucent = true
 setup_wizard_enabled = true
@@ -527,6 +523,7 @@ shared_gl_context = true
 show_location = true
 telemetry_enabled = false
 time_format = "{:%I:%M %p}"
+umbriel_overview_type_to_launch_enabled = false
 
     [shell.animation]
     enabled = true
@@ -534,6 +531,8 @@ time_format = "{:%I:%M %p}"
 
     [shell.greeter_sync]
     auto_sync = false
+
+    [shell.keyboard_layout]
 
     [shell.launcher]
     app_grid = true
@@ -549,6 +548,9 @@ time_format = "{:%I:%M %p}"
     sort_by_usage = true
 
         [shell.launcher.dmenu]
+
+        [shell.launcher.panels]
+        ignored = [ "polkit", "setup-wizard", "test", "launcher" ]
 
         [shell.launcher.providers.calculator]
         prefix = "c"
@@ -604,6 +606,8 @@ time_format = "{:%I:%M %p}"
 
     [shell.screenshot]
     annotate = true
+    close_on_copy = true
+    close_on_save = true
     confirm_region = true
     copy_to_clipboard = true
     directory = "~/Pictures/Screenshots"
@@ -614,6 +618,7 @@ time_format = "{:%I:%M %p}"
     remember_last_region = false
     save_to_file = true
     show_cursor = true
+    skip_annotate_on_copy_save = false
 
     [shell.session]
     grid = false
@@ -634,6 +639,7 @@ time_format = "{:%I:%M %p}"
 
         [[shell.session.actions]]
         action = "suspend"
+        command = ""
         countdown_seconds = 3.0
         enabled = true
         glyph = "zzz"
@@ -676,6 +682,12 @@ time_format = "{:%I:%M %p}"
     direction = "down"
 
     [shell.window_switcher]
+    current_workspace_only = false
+    mru = false
+    show_all_outputs = true
+    show_app_icon = true
+    show_caption = true
+    show_count = true
     style = "compact"
 
 [storage]
@@ -725,6 +737,7 @@ community_palette = "Catppuccin Mocha Mauve-Lavender"
 custom_palette = ""
 mode = "dark"
 pure_black_dark = false
+shell_mode = "follow"
 source = "community"
 wallpaper_scheme = "faithful"
 
@@ -752,15 +765,6 @@ transition_on_startup = true
     interval_seconds = 1800
     order = "random"
     recursive = true
-
-    [wallpaper.default]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/flowers-21.png"
-
-    [wallpaper.last]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/flowers-21.png"
-
-    [wallpaper.monitors.eDP-1]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/flowers-21.png"
 
 [weather]
 effects = true
