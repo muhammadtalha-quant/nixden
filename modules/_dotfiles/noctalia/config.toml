@@ -730,7 +730,7 @@ wallpaper_scheme = "faithful"
 
     [theme.templates]
     builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "qt", "starship" ]
-    community_ids = [ "obsidian", "bat", "fzf", "lazygit" ]
+    community_ids = [ "obsidian", "bat", "fzf" ]
     enable_builtin_templates = true
     enable_community_templates = true
 
