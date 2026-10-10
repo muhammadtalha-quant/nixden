@@ -721,7 +721,7 @@ swap_pct_critical_threshold = 80.0
 
 [theme]
 builtin = "Ayu"
-community_palette = "Catppuccin Macchiato Mauve"
+community_palette = "Catppuccin Mocha Mauve-Lavender"
 custom_palette = ""
 mode = "dark"
 pure_black_dark = false
@@ -730,7 +730,7 @@ wallpaper_scheme = "faithful"
 
     [theme.templates]
     builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "qt", "starship" ]
-    community_ids = [ "obsidian", "bat", "fzf" ]
+    community_ids = [ "claude-code", "bat", "fzf" ]
     enable_builtin_templates = true
     enable_community_templates = true
 
@@ -754,13 +754,13 @@ transition_on_startup = true
     recursive = true
 
     [wallpaper.default]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/whale.jpg"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/flower.jpg"
 
     [wallpaper.last]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/whale.jpg"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/flower.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/whale.jpg"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/flower.jpg"
 
 [weather]
 effects = true
