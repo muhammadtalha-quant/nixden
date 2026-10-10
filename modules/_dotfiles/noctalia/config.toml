@@ -730,7 +730,7 @@ wallpaper_scheme = "faithful"
 
     [theme.templates]
     builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "qt", "starship" ]
-    community_ids = [ "claude-code", "bat", "fzf" ]
+    community_ids = [ "claude-code", "bat", "fzf", "lazygit" ]
     enable_builtin_templates = true
     enable_community_templates = true
 
@@ -754,13 +754,13 @@ transition_on_startup = true
     recursive = true
 
     [wallpaper.default]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/flower.jpg"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/flowers-21.png"
 
     [wallpaper.last]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/flower.jpg"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/flowers-21.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/flower.jpg"
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/flowers-21.png"
 
 [weather]
 effects = true
