@@ -17,8 +17,8 @@
     lsp.package = pkgs.nil;
   };
   scripts = {
-    compile.exec = "nh os boot";
-    apply.exec = "nh os test";
-    deploy.exec = "nh os switch";
+    registerOnly.exec = "nh os boot";
+    activateOnly.exec = "nh os test";
+    registerAndActivate.exec = "nh os switch";
   };
 }

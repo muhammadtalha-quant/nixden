@@ -54,14 +54,15 @@
         enableAllHardware = true;
       };
       programs = {
-
         gnupg = {
-          agent.enable = true;
-          agent.enableSSHSupport = true;
-        };
-        ssh = {
-          startAgent = true;
-          agentTimeout = "12h";
+          agent = {
+            enable = true;
+            enableSSHSupport = true;
+            settings = {
+              default-cache-ttl = 43200;
+              max-cache-ttl = 43200;
+            };
+          };
         };
         nh = {
           enable = true;

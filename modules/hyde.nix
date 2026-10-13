@@ -80,13 +80,7 @@
           enable = true;
           terminal = "kitty";
         };
-        gnupg.agent = {
-          pinentryPackage = pkgs.pinentry-gnome3;
-          settings = {
-            default-cache-ttl = 43200;
-            max-cache-ttl = 43200;
-          };
-        };
+        gnupg.agent.pinentryPackage = pkgs.pinentry-gnome3;
       };
     };
     homeManager = { pkgs, ... }: {
