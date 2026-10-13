@@ -29,12 +29,6 @@
         useUserPackages = true;
         backupFileExtension = "backup";
       };
-      networking = {
-        firewall = {
-          allowedTCPPorts = [ 53317 ];
-          allowedUDPPorts = [ 53317 ];
-        };
-      };
       services = {
         power-profiles-daemon.enable = true;
         upower.enable = true;

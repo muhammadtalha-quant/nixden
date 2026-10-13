@@ -24,7 +24,11 @@
         };
       };
       networking = {
-        firewall.enable = true;
+        firewall = {
+          enable = true;
+          allowedTCPPorts = host.firewallAllowedTCPPorts;
+          allowedUDPPorts = host.firewallAllowedUDPPorts;
+        };
         networkmanager.enable = true;
       };
       nix = {

@@ -13,6 +13,14 @@
         type = lib.types.str;
         default = "/etc/nixos";
       };
+      firewallAllowedTCPPorts = lib.mkOption {
+        type = lib.types.listOf lib.types.port;
+        default = null;
+      };
+      firewallAllowedUDPPorts = lib.mkOption {
+        type = lib.types.listOf lib.types.port;
+        default = null;
+      };
       disko = lib.mkOption {
         type = lib.types.submodule {
           options = {

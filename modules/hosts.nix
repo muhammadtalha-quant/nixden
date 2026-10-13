@@ -4,6 +4,11 @@
       stateVersion = "26.05";
       timeZone = "Asia/Karachi";
       flakePath = "/home/muhammadtalha/denix";
+      firewallAllowedTCPPorts = [
+        53317
+        22
+      ];
+      firewallAllowedUDPPorts = [ 53317 ];
       disko = {
         device = "/dev/sda";
         swapSize = "4G";
