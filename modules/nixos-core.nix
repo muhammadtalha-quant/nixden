@@ -43,8 +43,11 @@
           dates = [ "09:00:00" ];
         };
       };
-      services.dbus.enable = true;
-      services.envfs.enable = true;
+      services = {
+        dbus.enable = true;
+        openssh.enable = true;
+        envfs.enable = true;
+      };
 
       hardware = {
         enableAllFirmware = true;
@@ -56,7 +59,10 @@
           agent.enable = true;
           agent.enableSSHSupport = true;
         };
-
+        ssh = {
+          startAgent = true;
+          agentTimeout = "12h";
+        };
         nh = {
           enable = true;
           flake = host.flakePath;
