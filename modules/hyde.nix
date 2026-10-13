@@ -20,8 +20,6 @@
         };
         systemPackages = with pkgs; [
           gpu-screen-recorder
-          rar
-          unar
           adw-gtk3
         ];
       };
