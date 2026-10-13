@@ -151,7 +151,7 @@
             content = ./_dotfiles/hypr/helpers.lua;
             autoLoad = false;
           };
-          "hyprland.keys" = {
+          "hyprland.keybindings" = {
             content = ''
               require("hyprland.hotkeys.applications")
               require("hyprland.hotkeys.noctalia")
