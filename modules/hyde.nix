@@ -1,9 +1,6 @@
 { inputs, ... }: {
   den.aspects.hyde = { user, ... }: {
     nixos = { pkgs, ... }: {
-      imports = [
-        inputs.home-manager.nixosModules.home-manager
-      ];
       fonts.packages = with pkgs; [
         newcomputermodern
         inter
@@ -11,6 +8,7 @@
         nerd-fonts.jetbrains-mono
         noto-fonts-color-emoji
       ];
+      nixpkgs.config.allowUnfree = true;
       environment = {
         sessionVariables = {
           EDITOR = "nvim";
@@ -22,12 +20,6 @@
           gpu-screen-recorder
           adw-gtk3
         ];
-      };
-      nixpkgs.config.allowUnfree = true;
-      home-manager = {
-        useGlobalPkgs = true;
-        useUserPackages = true;
-        backupFileExtension = "backup";
       };
       services = {
         power-profiles-daemon.enable = true;

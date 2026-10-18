@@ -16,7 +16,6 @@
         imports = [
           inputs.home-manager.nixosModules.home-manager
         ];
-        nixpkgs.config.allowUnfree = lib.mkDefault false;
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
