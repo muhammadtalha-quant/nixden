@@ -23,7 +23,7 @@
       url = "github:pfassina/lazyvim-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs.url = "https://flakehub.com/f/DeterminateSystems/nixpkgs-weekly/0.1";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-lib.follows = "nixpkgs";
   };
 }
