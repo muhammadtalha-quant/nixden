@@ -19,6 +19,7 @@
         systemPackages = with pkgs; [
           gpu-screen-recorder
           adw-gtk3
+          harlequin
         ];
       };
       services = {
@@ -225,7 +226,6 @@
               python.enable = true;
               json.enable = true;
               toml.enable = true;
-              sql.enable = true;
               typst.enable = true;
               yaml.enable = true;
             };
