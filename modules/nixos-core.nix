@@ -86,7 +86,6 @@
         systemPackages = with pkgs; [
           nix-output-monitor
           ripgrep
-          _7zz
           zip
           eza
           bat
