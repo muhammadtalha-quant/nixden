@@ -431,18 +431,6 @@
         };
         userDirs.enable = true;
         localBinInPath = true;
-        mimeApps = {
-          enable = true;
-          defaultApplicationPackages = with pkgs; [
-            neovim
-            nautilus
-            file-roller
-            papers
-            amberol
-            showtime
-            loupe
-          ];
-        };
       };
       gtk = {
         enable = true;
