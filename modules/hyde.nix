@@ -264,6 +264,8 @@
             "page_up" = "scroll_page_up";
             "page_down" = "scroll_page_down";
             "ctrl+shift+enter" = "no_op";
+            "ctrl+shift+t" = "no_op";
+            "ctrl+shift+q" = "no_op";
             "ctrl+alt+enter" = "no_op";
             "ctrl+alt+left" = "no_op";
             "ctrl+alt+right" = "no_op";
@@ -318,6 +320,15 @@
               lowSpeedTime = 600;
             };
           };
+        };
+
+        zellij = {
+          enable = true;
+          extraConfig = ''
+            theme_dark "catppuccin-macchiato"
+            theme_light "catppuccin-latte"
+          '';
+          enableFishIntegration = true;
         };
         fish = {
           enable = true;
