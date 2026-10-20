@@ -163,9 +163,6 @@
             autoLoad = false;
           };
         };
-        extraConfig = ''
-          require("noctalia")
-        '';
       };
       programs = {
 
@@ -221,9 +218,6 @@
             scrollback_lines = 100000;
             enabled_layouts = "splits,stack";
           };
-          extraConfig = ''
-            include themes/noctalia.conf
-          '';
           shellIntegration.enableFishIntegration = true;
           enableGitIntegration = true;
           keybindings = {
@@ -294,10 +288,6 @@
 
         zellij = {
           enable = true;
-          extraConfig = ''
-            theme_dark "catppuccin-macchiato"
-            theme_light "catppuccin-latte"
-          '';
           enableFishIntegration = true;
         };
         fish = {
