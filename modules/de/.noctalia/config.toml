@@ -6,7 +6,7 @@ ui_scale = 1.0
 enable_overdrive = false
 enable_sounds = true
 sound_theme = "freedesktop"
-sound_volume = 0.59999996423721313
+sound_volume = 0.59999998658895493
 
 [backdrop]
 blur_intensity = 0.17999999225139618
@@ -26,7 +26,7 @@ order = [ "default" ]
     capsule_fill = "on_primary"
     capsule_foreground = "on_surface"
     capsule_group = []
-    capsule_opacity = 0.84999996423721313
+    capsule_opacity = 0.84999998100101948
     capsule_padding = 10.0
     capsule_radius = 15.0
     capsule_thickness = 0.75
@@ -68,7 +68,7 @@ warning_threshold = 20
 [brightness]
 enable_ddcutil = false
 ignore_mmids = []
-minimum_brightness = 0.19999998807907104
+minimum_brightness = 0.19999999552965164
 sync_all_monitors = true
 
 [calendar]
@@ -110,11 +110,14 @@ width = 700
 [desktop_widgets]
 enabled = false
 schema_version = 2
+widget_order = []
 
     [desktop_widgets.grid]
     cell_size = 16
     major_interval = 4
     visible = false
+
+    [desktop_widgets.widget]
 
 [dock]
 active_monitor_only = false
@@ -170,7 +173,7 @@ rebooting = []
 session_locked = []
 session_unlocked = []
 shutting_down = []
-started = [ "hyprctl reload" ]
+started = "hyprctl reload"
 theme_mode_changed = []
 wallpaper_changed = []
 wifi_disabled = []
@@ -335,12 +338,12 @@ widget_order = [
     [lockscreen_widgets.widget."lockscreen-login-box@winit"]
     box_height = 196.0
     box_width = 720.0
-    cx = 674.0
-    cy = 528.0
+    cx = 342.5
+    cy = 536.92376708984375
     enabled = true
     output = "winit"
-    placement_height = 710.0
-    placement_width = 1348.0
+    placement_height = 722.0
+    placement_width = 685.0
     rotation = 0.0
     type = "login_box"
 
@@ -476,7 +479,6 @@ auto_update = "official"
 enabled = [ "noctalia/screen_recorder", "noctalia/kaomoji", "noctalia/notes" ]
 
     [[plugins.source]]
-    enabled = true
     kind = "git"
     location = "https://github.com/noctalia-dev/official-plugins"
     name = "official"
@@ -742,10 +744,10 @@ source = "community"
 wallpaper_scheme = "faithful"
 
     [theme.templates]
-    builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "qt", "starship" ]
-    community_ids = [ "claude-code", "bat", "fzf", "lazygit" ]
-    enable_builtin_templates = true
-    enable_community_templates = true
+    builtin_ids = []
+    community_ids = []
+    enable_builtin_templates = false
+    enable_community_templates = false
 
 [wallpaper]
 directory = "/home/muhammadtalha/Pictures/Wallpapers"
@@ -765,6 +767,18 @@ transition_on_startup = true
     interval_seconds = 1800
     order = "random"
     recursive = true
+
+    [wallpaper.default]
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/cat-vibin.png"
+
+    [wallpaper.last]
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/cat-vibin.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/cat-vibin.png"
+
+    [wallpaper.monitors.winit]
+    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/excalibur-lake.jpg"
 
 [weather]
 effects = true
