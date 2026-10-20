@@ -3,6 +3,6 @@
   imports = [
     (inputs.den.namespace "disko" false)
     (inputs.den.namespace "de" false)
-    (inputs.den.namespace "nvf" false)
+    (inputs.den.namespace "neovim" false)
   ];
 }
