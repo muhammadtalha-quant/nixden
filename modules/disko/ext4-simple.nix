@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  diskoConfigurations.ext4-simple = { host, ... }: {
+  disko.ext4-simple = { host, ... }: {
     nixos = {
       imports = [
         inputs.disko.nixosModules.disko

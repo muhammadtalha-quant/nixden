@@ -1,7 +1,7 @@
 { inputs, ... }: {
 
   imports = [
-    (inputs.den.namespace "diskoConfigurations" true)
+    (inputs.den.namespace "disko" false)
     (inputs.den.namespace "nvf" false)
   ];
 }

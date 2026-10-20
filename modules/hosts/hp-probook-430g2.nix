@@ -1,7 +1,7 @@
-{ diskoConfigurations, ... }: {
+{ disko, ... }: {
   den.aspects.hp-probook-430g2 = { host, ... }: {
     includes = [
-      diskoConfigurations.ext4-simple
+      disko.ext4-simple
     ];
     nixos =
       { pkgs, ... }:
