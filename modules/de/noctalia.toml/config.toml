@@ -3,10 +3,14 @@ high_contrast = false
 ui_scale = 1.0
 
 [audio]
+enable_notification_sounds = true
 enable_overdrive = false
+enable_power_sounds = true
+enable_screenshot_sounds = true
 enable_sounds = true
+enable_volume_sounds = true
 sound_theme = "freedesktop"
-sound_volume = 0.59999998658895493
+sound_volume = 0.59999996423721313
 
 [backdrop]
 blur_intensity = 0.17999999225139618
@@ -18,19 +22,22 @@ order = [ "default" ]
 
     [bar.default]
     auto_hide = false
+    auto_hide_delay_ms = 0
     background_opacity = 0.0
     border = "outline"
     border_width = 0.0
     capsule = true
     capsule_border = "on_primary"
+    capsule_border_width = 1.0
     capsule_fill = "on_primary"
     capsule_foreground = "on_surface"
     capsule_group = []
-    capsule_opacity = 0.84999998100101948
+    capsule_opacity = 0.84999996423721313
     capsule_padding = 10.0
     capsule_radius = 15.0
     capsule_thickness = 0.75
     center = [ "audio_visualizer", "notifications", "clock", "audio_visualizer" ]
+    compositor_blur = true
     concave_edge_corners = false
     contact_shadow = false
     enabled = true
@@ -55,6 +62,7 @@ order = [ "default" ]
     scale = 1.0
     shadow = false
     show_on_workspace_switch = true
+    show_tooltip = true
     smart_auto_hide = false
     start = [ "workspaces", "weather" ]
     thickness = 40
@@ -68,10 +76,12 @@ warning_threshold = 20
 [brightness]
 enable_ddcutil = false
 ignore_mmids = []
-minimum_brightness = 0.19999999552965164
+minimum_brightness = 0.19999998807907104
 sync_all_monitors = true
 
 [calendar]
+dedupe_events = false
+dedupe_ignore_patterns = []
 enabled = false
 event_date_format = "%A %e %B"
 event_time_format = "%H:%M"
@@ -110,14 +120,11 @@ width = 700
 [desktop_widgets]
 enabled = false
 schema_version = 2
-widget_order = []
 
     [desktop_widgets.grid]
     cell_size = 16
     major_interval = 4
     visible = false
-
-    [desktop_widgets.widget]
 
 [dock]
 active_monitor_only = false
@@ -144,7 +151,6 @@ magnification_scale = 1.3500000238418579
 main_axis_padding = 16
 margin_edge = 11
 margin_ends = 0
-monitors = []
 pinned = []
 position = "bottom"
 radius = 0
@@ -173,7 +179,7 @@ rebooting = []
 session_locked = []
 session_unlocked = []
 shutting_down = []
-started = "hyprctl reload"
+started = [ "hyprctl reload" ]
 theme_mode_changed = []
 wallpaper_changed = []
 wifi_disabled = []
@@ -255,6 +261,7 @@ blurred_desktop = false
 edge_smoothness = 0.30000001192092896
 enabled = true
 fingerprint = true
+grace_period_seconds = 0
 lock_before_suspend = true
 monitors = []
 tint_intensity = 0.64999997615814209
@@ -428,8 +435,11 @@ temperature_night = 5000
 [notification]
 background_opacity = 0.97000002861022949
 border = true
+border_color = "outline"
+border_width = 1.0
 collapse_on_dismiss = true
 enable_daemon = true
+follow_focused_output = false
 history_retention_hours = 0
 keep_dismissed_in_history = true
 layer = "top"
@@ -441,11 +451,16 @@ position = "top_right"
 scale = 1.0
 show_actions = true
 show_app_name = true
+width = 360
 
 [osd]
 background_opacity = 0.5
 border = true
+border_color = "outline"
+border_width = 1.0
 enabled = true
+follow_focused_output = false
+hide_delay_ms = 1400
 monitors = []
 offset_x = 20
 offset_y = 8
@@ -479,6 +494,7 @@ auto_update = "official"
 enabled = [ "noctalia/screen_recorder", "noctalia/kaomoji", "noctalia/notes" ]
 
     [[plugins.source]]
+    enabled = true
     kind = "git"
     location = "https://github.com/noctalia-dev/official-plugins"
     name = "official"
@@ -516,12 +532,14 @@ password_style = "default"
 polkit_agent = true
 popup_borders = true
 popup_shadows = true
+readline_shortcuts = false
 screen_time_enabled = false
 settings_expand_all_groups = false
 settings_show_advanced = false
 settings_window_translucent = true
 setup_wizard_enabled = true
 shared_gl_context = true
+show_close_buttons = true
 show_location = true
 telemetry_enabled = false
 time_format = "{:%I:%M %p}"
@@ -540,14 +558,22 @@ umbriel_overview_type_to_launch_enabled = false
     app_grid = true
     auto_paste = "off"
     categories = false
+    category_icons_only = false
     compact = false
+    default_view = "recent"
     fetch_exchange_rates = true
+    layout = "full"
     pinned = []
     provider_prefix = "/"
+    search_position = "bottom"
     show_app_actions = false
     show_app_origin_indicator = true
     show_icons = true
+    show_session_button = true
+    show_settings_button = true
     sort_by_usage = true
+    track_usage = true
+    width = 760
 
         [shell.launcher.dmenu]
 
@@ -573,6 +599,8 @@ umbriel_overview_type_to_launch_enabled = false
     blacklist = []
 
     [shell.panel]
+    border_color = "outline"
+    border_width = 1.0
     borders = true
     clipboard_placement = "floating"
     clipboard_position = "center"
@@ -596,6 +624,7 @@ umbriel_overview_type_to_launch_enabled = false
     transparency_mode = "glass"
     wallpaper_placement = "attached"
     wallpaper_position = "auto"
+    wallpaper_show_names = true
 
     [shell.privacy]
     cam_filter_regex = ""
@@ -617,6 +646,7 @@ umbriel_overview_type_to_launch_enabled = false
     freeze_screen = true
     pipe_command = ""
     pipe_to_command = false
+    region_modifier = "none"
     remember_last_region = false
     save_to_file = true
     show_cursor = true
@@ -734,14 +764,13 @@ swap_pct_activity_threshold = 20.0
 swap_pct_critical_threshold = 80.0
 
 [theme]
-builtin = "Ayu"
-community_palette = "Catppuccin Mocha Mauve-Lavender"
+builtin = ""
+community_palette = ""
 custom_palette = ""
 mode = "dark"
 pure_black_dark = false
 shell_mode = "follow"
-source = "community"
-wallpaper_scheme = "faithful"
+sync_color_scheme = true
 
     [theme.templates]
     builtin_ids = []
@@ -767,18 +796,6 @@ transition_on_startup = true
     interval_seconds = 1800
     order = "random"
     recursive = true
-
-    [wallpaper.default]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/cat-vibin.png"
-
-    [wallpaper.last]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/cat-vibin.png"
-
-    [wallpaper.monitors.eDP-1]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/cat-vibin.png"
-
-    [wallpaper.monitors.winit]
-    path = "/home/muhammadtalha/Pictures/Wallpapers/macchiato/excalibur-lake.jpg"
 
 [weather]
 effects = true
