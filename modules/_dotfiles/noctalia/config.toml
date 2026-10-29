@@ -3,8 +3,12 @@ high_contrast = false
 ui_scale = 1.0
 
 [audio]
+enable_notification_sounds = true
 enable_overdrive = false
+enable_power_sounds = true
+enable_screenshot_sounds = true
 enable_sounds = true
+enable_volume_sounds = true
 sound_theme = "freedesktop"
 sound_volume = 0.59999996423721313
 
@@ -18,11 +22,13 @@ order = [ "default" ]
 
     [bar.default]
     auto_hide = false
+    auto_hide_delay_ms = 0
     background_opacity = 0.0
     border = "outline"
     border_width = 0.0
     capsule = true
     capsule_border = "on_primary"
+    capsule_border_width = 1.0
     capsule_fill = "on_primary"
     capsule_foreground = "on_surface"
     capsule_group = []
@@ -31,6 +37,7 @@ order = [ "default" ]
     capsule_radius = 15.0
     capsule_thickness = 0.75
     center = [ "audio_visualizer", "notifications", "clock", "audio_visualizer" ]
+    compositor_blur = true
     concave_edge_corners = false
     contact_shadow = false
     enabled = true
@@ -55,6 +62,7 @@ order = [ "default" ]
     scale = 1.0
     shadow = false
     show_on_workspace_switch = true
+    show_tooltip = true
     smart_auto_hide = false
     start = [ "workspaces", "weather" ]
     thickness = 40
@@ -72,6 +80,8 @@ minimum_brightness = 0.19999998807907104
 sync_all_monitors = true
 
 [calendar]
+dedupe_events = false
+dedupe_ignore_patterns = []
 enabled = false
 event_date_format = "%A %e %B"
 event_time_format = "%H:%M"
@@ -137,14 +147,13 @@ launcher_icon = "grid-dots"
 launcher_position = "start"
 layer = "top"
 magnification = true
-magnification_scale = 1.3500000238418579
+magnification_scale = 2.0
 main_axis_padding = 16
 margin_edge = 11
 margin_ends = 0
-monitors = []
 pinned = []
 position = "bottom"
-radius = 0
+radius = 26
 radius_bottom_left = 16
 radius_bottom_right = 16
 radius_top_left = 16
@@ -252,6 +261,7 @@ blurred_desktop = false
 edge_smoothness = 0.30000001192092896
 enabled = true
 fingerprint = true
+grace_period_seconds = 0
 lock_before_suspend = true
 monitors = []
 tint_intensity = 0.64999997615814209
@@ -335,12 +345,12 @@ widget_order = [
     [lockscreen_widgets.widget."lockscreen-login-box@winit"]
     box_height = 196.0
     box_width = 720.0
-    cx = 674.0
-    cy = 528.0
+    cx = 342.5
+    cy = 536.92376708984375
     enabled = true
     output = "winit"
-    placement_height = 710.0
-    placement_width = 1348.0
+    placement_height = 722.0
+    placement_width = 685.0
     rotation = 0.0
     type = "login_box"
 
@@ -425,8 +435,11 @@ temperature_night = 5000
 [notification]
 background_opacity = 0.97000002861022949
 border = true
+border_color = "outline"
+border_width = 1.0
 collapse_on_dismiss = true
 enable_daemon = true
+follow_focused_output = false
 history_retention_hours = 0
 keep_dismissed_in_history = true
 layer = "top"
@@ -438,11 +451,16 @@ position = "top_right"
 scale = 1.0
 show_actions = true
 show_app_name = true
+width = 360
 
 [osd]
 background_opacity = 0.5
 border = true
+border_color = "outline"
+border_width = 1.0
 enabled = true
+follow_focused_output = false
+hide_delay_ms = 1400
 monitors = []
 offset_x = 20
 offset_y = 8
@@ -472,7 +490,7 @@ scale = 1.2000000476837158
 color_range = "full"
 
 [plugins]
-auto_update = "official"
+auto_update = "all"
 enabled = [ "noctalia/screen_recorder", "noctalia/kaomoji", "noctalia/notes" ]
 
     [[plugins.source]]
@@ -482,7 +500,7 @@ enabled = [ "noctalia/screen_recorder", "noctalia/kaomoji", "noctalia/notes" ]
     name = "official"
 
     [[plugins.source]]
-    enabled = false
+    enabled = true
     kind = "git"
     location = "https://github.com/noctalia-dev/community-plugins"
     name = "community"
@@ -514,12 +532,14 @@ password_style = "default"
 polkit_agent = true
 popup_borders = true
 popup_shadows = true
+readline_shortcuts = false
 screen_time_enabled = false
 settings_expand_all_groups = false
 settings_show_advanced = false
 settings_window_translucent = true
 setup_wizard_enabled = true
 shared_gl_context = true
+show_close_buttons = true
 show_location = true
 telemetry_enabled = false
 time_format = "{:%I:%M %p}"
@@ -538,14 +558,22 @@ umbriel_overview_type_to_launch_enabled = false
     app_grid = true
     auto_paste = "off"
     categories = false
+    category_icons_only = false
     compact = false
+    default_view = "recent"
     fetch_exchange_rates = true
+    layout = "full"
     pinned = []
     provider_prefix = "/"
+    search_position = "bottom"
     show_app_actions = false
     show_app_origin_indicator = true
     show_icons = true
+    show_session_button = true
+    show_settings_button = true
     sort_by_usage = true
+    track_usage = true
+    width = 760
 
         [shell.launcher.dmenu]
 
@@ -571,6 +599,8 @@ umbriel_overview_type_to_launch_enabled = false
     blacklist = []
 
     [shell.panel]
+    border_color = "outline"
+    border_width = 1.0
     borders = true
     clipboard_placement = "floating"
     clipboard_position = "center"
@@ -594,6 +624,7 @@ umbriel_overview_type_to_launch_enabled = false
     transparency_mode = "glass"
     wallpaper_placement = "attached"
     wallpaper_position = "auto"
+    wallpaper_show_names = true
 
     [shell.privacy]
     cam_filter_regex = ""
@@ -615,6 +646,7 @@ umbriel_overview_type_to_launch_enabled = false
     freeze_screen = true
     pipe_command = ""
     pipe_to_command = false
+    region_modifier = "none"
     remember_last_region = false
     save_to_file = true
     show_cursor = true
@@ -733,17 +765,18 @@ swap_pct_critical_threshold = 80.0
 
 [theme]
 builtin = "Ayu"
-community_palette = "Catppuccin Mocha Mauve-Lavender"
+community_palette = "Catppuccin Macchiato Mauve"
 custom_palette = ""
 mode = "dark"
 pure_black_dark = false
 shell_mode = "follow"
 source = "community"
+sync_color_scheme = true
 wallpaper_scheme = "faithful"
 
     [theme.templates]
-    builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "qt", "starship" ]
-    community_ids = [ "claude-code", "bat", "fzf", "lazygit" ]
+    builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "ghostty", "hyprland", "kcolorscheme", "kitty", "qt", "starship" ]
+    community_ids = [ "obsidian", "papirus-icons", "bat", "fzf" ]
     enable_builtin_templates = true
     enable_community_templates = true
 
