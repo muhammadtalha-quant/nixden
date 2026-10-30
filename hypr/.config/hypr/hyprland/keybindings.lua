@@ -1,0 +1,5 @@
+require("hyprland.hotkeys.applications")
+require("hyprland.hotkeys.noctalia")
+require("hyprland.hotkeys.windows")
+require("hyprland.hotkeys.workspaces")
+require("hyprland.hotkeys.submaps")
