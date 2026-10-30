@@ -776,7 +776,7 @@ wallpaper_scheme = "faithful"
 
     [theme.templates]
     builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "ghostty", "hyprland", "kcolorscheme", "kitty", "qt", "starship" ]
-    community_ids = [ "obsidian", "papirus-icons", "bat", "fzf" ]
+    community_ids = [ "lazyvim", "obsidian", "fastfetch", "obs", "papirus-icons", "bat" ]
     enable_builtin_templates = true
     enable_community_templates = true
 
