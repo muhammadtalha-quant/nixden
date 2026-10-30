@@ -33,5 +33,5 @@
 [user]
 	email = "muhammadtalha.quant@gmail.com"
 	name = "Muhammad Talha"
-	signingKey = "33DF23031DE1A83C"
+	signingKey = "KEY_ID"
 	useConfigOnly = true
