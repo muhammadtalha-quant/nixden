@@ -1,0 +1,37 @@
+[commit]
+	gpgSign = true
+
+[diff]
+	guitool = "kitty.gui"
+	tool = "kitty"
+
+[difftool]
+	prompt = false
+	trustExitCode = true
+
+[difftool "kitty"]
+	cmd = "kitten diff $LOCAL $REMOTE"
+
+[difftool "kitty.gui"]
+	cmd = "kitten diff $LOCAL $REMOTE"
+
+[gpg]
+	format = "openpgp"
+
+[http]
+	lowSpeedLimit = 1000
+	lowSpeedTime = 600
+	postBuffer = 524288000
+	version = "HTTP/1.1"
+
+[init]
+	defaultBranch = "main"
+
+[tag]
+	gpgSign = true
+
+[user]
+	email = "muhammadtalha.quant@gmail.com"
+	name = "Muhammad Talha"
+	signingKey = "33DF23031DE1A83C"
+	useConfigOnly = true
