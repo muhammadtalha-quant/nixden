@@ -776,19 +776,7 @@ wallpaper_scheme = "faithful"
 
     [theme.templates]
     builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "qt", "starship" ]
-    community_ids = [
-        "claude-code",
-        "lazyvim",
-        "libreoffice",
-        "obsidian",
-        "fastfetch",
-        "obs",
-        "zellij",
-        "papirus-icons",
-        "bat",
-        "fzf",
-        "lazygit"
-    ]
+    community_ids = [ "lazyvim", "libreoffice", "obsidian", "obs", "papirus-icons" ]
     enable_builtin_templates = true
     enable_community_templates = true
 
@@ -979,6 +967,9 @@ type = "volume"
 interactive = true
 show_condition = false
 type = "weather"
+
+[widget.widget]
+type = "vn1k/cursor:widget"
 
 [widget.workspaces]
 active_pill_size = 1.8500000000000001
