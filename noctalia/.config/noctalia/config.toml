@@ -775,8 +775,20 @@ sync_color_scheme = true
 wallpaper_scheme = "faithful"
 
     [theme.templates]
-    builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "ghostty", "hyprland", "kcolorscheme", "kitty", "qt", "starship" ]
-    community_ids = [ "obsidian", "papirus-icons", "bat", "fzf" ]
+    builtin_ids = [ "btop", "cava", "gtk3", "gtk4", "hyprland", "kcolorscheme", "kitty", "qt", "starship" ]
+    community_ids = [
+        "claude-code",
+        "lazyvim",
+        "libreoffice",
+        "obsidian",
+        "fastfetch",
+        "obs",
+        "zellij",
+        "papirus-icons",
+        "bat",
+        "fzf",
+        "lazygit"
+    ]
     enable_builtin_templates = true
     enable_community_templates = true
 
