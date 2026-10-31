@@ -1,0 +1,8 @@
+hl.env("HYPRCURSOR_THEME", "cursor")
+hl.env("HYPRCURSOR_SIZE", "26")
+hl.env("XCURSOR_THEME","cursor")
+hl.env("XCURSOR_SIZE", "26")
+hl.env("GDK_BACKEND", "wayland,x11,*")
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("SDL_VIDEODRIVER", "wayland")
+hl.env("CLUTTER_BACKEND", "wayland")
